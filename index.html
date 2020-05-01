@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Tambola</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+	<style type="text/css">
+		#input-ticket .col-md-1 input {
+			width: 100%;
+			text-align: center;
+			font-weight: bold;
+		}
+
+		#input-ticket .col-md-1 {
+			margin: 0;
+			padding: 0;
+		}
+
+	</style>
+
+</head>
+
+<body class="body">
+
+	<div class="col-md-12">
+		<button class="btn btn-danger mt-1" type="button" onclick="resetNumbers()" class="form-control" style="float: right;">Reset</button>
+	</div>
+
+	<div class="container">
+		<h1>Tambola</h1>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="card">
+					<div class="card-title">History</div>
+					<div class="card-body" id="number_history"></div>
+				</div>
+				<button class="btn btn-primary mt-1" type="button" id="add_btn" onclick="addNewTicket()" class="form-control">Add Ticket</button>
+				<button class="btn btn-primary mt-1" type="button" id="lock_btn" onclick="lockTicket()" class="form-control">Lock Ticket</button>
+			</div>
+			<div class="col-md-6 mt-3" id="input-tickets"></div>
+		</div>
+	</div>
+
+	<br>
+
+	<div class="container">
+		<h2>Current Schemes Status</h2>
+		<div class="row" id="current_schemes"></div>
+	</div>
+
+	<br>
+
+	<div class="container">
+		<h2>Original Schemes</h2>
+		<div class="row" id="schemes"></div>
+	</div>
+
+	<div id="scheme_template" style="display: none">
+		<div class="col-md-3" id="scheme_{{scheme_id}}">
+			<div class="card">
+				<div class="card-title">{{scheme}}</div>
+				<div class="card-body">
+					{{scheme_num}}
+				</div>
+				<div class="card-body">
+					<button class="btn btn-danger" onclick="removeScheme({{scheme_id}})">Remove</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="ticket_template" style="display: none">
+		<div class="row" id="input-ticket">
+			<div class="col-md-1 col-1"><p style="display: none">Reserved</p></div>
+			<div class="col-md-1 col-1">
+				<input type="text" onclick="addNewNum(this)">
+			</div>
+			<div class="col-md-1 col-1">
+				<input type="text" onclick="addNewNum(this)">
+			</div>
+			<div class="col-md-1 col-1">
+				<input type="text" onclick="addNewNum(this)">
+			</div>
+			<div class="col-md-1 col-1">
+				<input type="text" onclick="addNewNum(this)">
+			</div>
+			<div class="col-md-1 col-1">
+				<input type="text" onclick="addNewNum(this)">
+			</div>
+			<div class="col-md-1 col-1">
+				<input type="text" onclick="addNewNum(this)">
+			</div>
+			<div class="col-md-1 col-1">
+				<input type="text" onclick="addNewNum(this)">
+			</div>
+			<div class="col-md-1 col-1">
+				<input type="text" onclick="addNewNum(this)">
+			</div>
+			<div class="col-md-1 col-1">
+				<input type="text" onclick="addNewNum(this)">
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>
