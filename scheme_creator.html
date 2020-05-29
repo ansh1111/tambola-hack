@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Tambola</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+	<style type="text/css">
+		#input-ticket .col-md-1 input {
+			width: 100%;
+			text-align: center;
+			font-weight: bold;
+		}
+
+		#input-ticket .col-md-1 {
+			margin: 0;
+			padding: 0;
+		}
+
+	</style>
+
+</head>
+
+<body class="body">
+
+	<div class="col-md-12">
+		<button class="btn btn-danger mt-1" type="button" onclick="alert('Refresh to see changes');window.close()" class="form-control" style="float: right;">Close Scheme Creator</button>
+	</div>
+
+	<div class="container">
+		<h1>Tambola - Scheme Creator</h1>
+		<div class="row">
+			<div class="col-md-6" id="step1">
+				<div class="card">
+					<div class="card-title">
+						<h3>List of Schemes</h3>
+					</div>
+					<textarea id="schemes" rows="8" cols="80" placeholder="Enter list of scheme separated by next lines"></textarea>
+				</div>
+				<button class="btn btn-primary mt-1" type="button" id="add_btn" onclick="explodeSchemes()" class="form-control">Next</button>
+			</div>
+		</div>
+		<div class="row mt-2" id="step2" style="display:none">
+			<div id="per-scheme"></div>
+			<div class="col-md-12 col-sm-12 col-lg-12">
+				<button class="btn btn-primary mt-1" type="button" id="add_btn" onclick="saveNumbers()" class="form-control">Save</button>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="scheme_creator.js"></script>
+
+	<div id="scheme_template" style="display:none">
+		<div class="col-md-6 col-sm-12">
+			<div class="card">
+				<div class="card-title">
+					<b>Enter Numbers for {{scheme}}</b>
+				</div>
+				<textarea id="{{count}}" rows="8" cols="80" placeholder="Enter list of numbers separated by next lines"></textarea>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

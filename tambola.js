@@ -1,18 +1,16 @@
 // Edit your schemes and respective numbers here
 
-var schemes = [
-	"Scheme 1",
-	"First Line",
-	"Second Line",
-	"King"
-]
+if(localStorage.schemes) {
+	var schemes = JSON.parse(localStorage.schemes)
+} else {
+	var schemes = []
+}
 
-var scheme_numbers = [
-	[2,24,41,52,82],
-	[10,29,56,64,89],
-	[17,31,44,75,90],
-	[2, 8, 17]
-]
+if(localStorage.scheme_number) {
+	var scheme_numbers = JSON.parse(localStorage.scheme_number)
+} else {
+	var scheme_numbers = []
+}
 
 var sagiri_arr = []
 var scheme_html = ''
@@ -56,9 +54,10 @@ function resetNumbers() {
 	$('#lock_btn').prop('disabled', false)
 	localStorage.setItem('ticket_html', '')
 	localStorage.setItem('removedScheme', '')
+	localStorage.setItem('scheme_number', '[]')
+	localStorage.setItem('schemes', '[]')
 	removed_schemes = []
-	updateScheme()
-	updateHistory()
+	window.location.reload()
 }
 
 function updateScheme() {
@@ -148,7 +147,7 @@ $(document).ready(function() {
 	$('#schemes').html(schemes_final)
 
 	updateScheme()
-	
+
 	if(localStorage.ticket_html) {
 		$('#input-tickets').html(localStorage.ticket_html)
 	}
