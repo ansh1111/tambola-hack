@@ -25,8 +25,8 @@ function saveNumbers() {
         var temp_nums = $('#'+i).val()
         var all_nums = temp_nums.split("\n")
         var final_all_nums = []
-        for(var i = 0; i < all_nums.length; i++) {
-            final_all_nums.push(parseInt(all_nums[i]))
+        for(var j = 0; j < all_nums.length; j++) {
+            final_all_nums.push(parseInt(all_nums[j]))
         }
         schemes_num_arr.push(final_all_nums)
     }
